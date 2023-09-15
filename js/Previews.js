@@ -1,8 +1,3 @@
-/**
- * Class for working with source and result images.
- * 
- * @author Haru Atari <HaruAtari@gmail.com>
- */
 var Previews = function()
 {
     var _this = this;
