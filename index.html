@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="icon.png">
+    <title>Pixellated | v1.0</title>
+
+    <!--=============== META PROPERTIES ===============-->
+    <meta property="og:title" content="Pixellated | v1.0">
+    <meta property="og:url" content="http://ayushmansarkar.github.io/pixellated/">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Creates HTML art from image">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="html art,ascii, html">
+    <meta name="description" content="Creates HTML art from image">
+
+    <meta charset="utf-8">
+    <!--=============== TERMYNAL ===============-->
+    <link rel="stylesheet" href="termynal.css">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!--=============== SHOELACE ===============-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.8.0/cdn/themes/light.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.8.0/cdn/shoelace-autoloader.js">
+    </script>
+
+    <!--=============== ICONIFY ===============-->
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+    <!--=============== FLOWBITE ===============-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
+    <style>
+        [data-termynal] {
+            margin: 15px;
+            height: 90vh;
+            border-radius: 2%;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <!-- the termynal container -->
+        <div id="termynal" data-termynal>
+            <span data-ty="input">cd ~/repos</span>
+            <span data-ty="input" data-ty-prompt="$ ~/repos">git clone pixellated</span>
+            <span data-ty="progress"></span>
+            <span data-ty>Successfully cloned pixellated</span>
+            <span data-ty></span>
+            <span data-ty="input">init Pixellated</span>
+            <span data-ty>Are you sure you want to install 'pixellated'?</span>
+            <span data-ty="input" data-ty-typeDelay="1000" data-ty-prompt="(y/n)">y</span>
+            <span data-ty="progress"></span>
+            <span data-ty>Installed version 1.0</span>
+            <span data-ty></span>
+            <span data-ty><a href="#next" onclick="showText()">Click to proceed</a></span>
+        </div>
+    </section>
+    <script>
+        showText = function (e) {
+            var advancedOptions = document.getElementById("next");
+            advancedOptions.style.display = "flex";
+        }
+    </script>
+    <section id="next" style="display: none;">
+        <div class="box" id="section2">
+            <img class="h-auto max-w-lg  mx-auto transition-all duration-300 rounded-lg blur-sm hover:blur-none"
+                src="pixellated.png" alt="image description">
+            <h1>This is Pixellated.</h1>
+            <style>
+                .box h1 {
+                    position: absolute;
+                    left: 50%;
+                    transform: translate(-50%, -450%);
+                }
+            </style>
+
+            <br>
+            <hr>
+
+            <div class="top">
+                <h2># Source image</h2>
+                <br>
+                <input id="source-image-file"
+                    class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                    aria-describedby="user_avatar_help" id="user_avatar" type="file">
+
+                <br>
+                <br>
+                <div class="mr-8">
+                    <h2># Settings & Guide</h2>
+                    <sl-dialog label="Settings" class="dialog-deny-close">
+                        <label for="input-used-text"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Used text:</label>
+                        <input type="text" id="input-used-text" aria-describedby="helper-text-explanation"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="B" value="B">
+
+                        <br>
+
+                        <div class="flex items-center mb-4">
+                            <input id="randomize-checkbox" type="checkbox" value=""
+                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                            <label for="randomize-checkbox"
+                                class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Randomize</label>
+                        </div>
+
+                        <br>
+
+                        <label for="input-font-size"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Font size:</label>
+                        <input type="number" id="input-font-size" aria-describedby="helper-text-explanation"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="8" value="8" min="3" max="20" step="1">
+
+                        <br>
+                        <label for="input-background-color"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Background:</label>
+                        <sl-color-picker id="input-background-color" value="#000" label="Select a color" swatches="
+                              #d0021b; #f5a623; #f8e71c; #8b572a; #7ed321; #417505; #bd10e0; #9013fe;
+                              #4a90e2; #50e3c2; #b8e986; #000; #444; #888; #ccc; #fff;">
+                        </sl-color-picker>
+
+                        <br>
+                        <br>
+
+                        <div class="flex items-center mb-4">
+                            <input id="input-background-transparent" type="checkbox" value=""
+                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                            <label for="input-background-transparent"
+                                class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Transparent</label>
+                        </div>
+
+                        <sl-button slot="footer" variant="primary">Close</sl-button>
+                    </sl-dialog>
+                    &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;
+                    <sl-icon-button name="gear" style="font-size: 1.5rem;" label="Settings"></sl-icon-button>
+                    <script>
+                        const dialog = document.querySelector('.dialog-deny-close');
+                        const input0 = dialog.querySelector('sl-input');
+                        const openButton = dialog.nextElementSibling;
+                        const closeButton = dialog.querySelector('sl-button[slot="footer"]');
+
+                        openButton.addEventListener('click', () => dialog.show());
+                        closeButton.addEventListener('click', () => dialog.hide());
+
+                        dialog.addEventListener('sl-request-close', event => {
+                            if (event.detail.source === 'overlay') {
+                                event.preventDefault();
+                            }
+                        });
+                    </script>
+
+                    <sl-dialog label="Guide" class="dialog-deny-close first" style="--width: 50vw;">
+                        <ol>
+                            <li>Select <b>source image</b> (you can drop it to special field).</li>
+                            <li>Insert <b>used letter</b> (it will be repeated) and select <b>font size</b>.</li>
+                            <li>Select <b>background color</b> (it may be transparent) of result image.</li>
+                            <li>Press button "<b>Create</b>" to generate result image.</li>
+                            <li>To watch full-size result image press button "<b>Full screen</b>"</li>
+                        </ol>
+                        <sl-button slot="footer" variant="primary">Close</sl-button>
+                    </sl-dialog>
+                    &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;
+                    <sl-icon-button name="info-square" style="font-size: 1.5rem;" label="Settings"></sl-icon-button>
+                    <script>
+                        const dialog1 = document.querySelector('.first');
+                        const input1 = dialog1.querySelector('sl-input');
+                        const openButton1 = dialog1.nextElementSibling;
+                        const closeButton1 = dialog1.querySelector('sl-button[slot="footer"]');
+
+                        openButton1.addEventListener('click', () => dialog1.show());
+                        closeButton1.addEventListener('click', () => dialog1.hide());
+
+                        dialog1.addEventListener('sl-request-close', event => {
+                            if (event.detail.source === 'overlay') {
+                                event.preventDefault();
+                            }
+                        });
+                    </script>
+                </div>
+
+                <br>
+                <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button type="button" id="create-button"
+                        class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent border border-gray-900 rounded-l-lg hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+                        <span class="iconify" data-icon="fluent-mdl2:edit-create"></span> &nbsp;
+                        Create
+                    </button>
+                    <button type="button" id="downloadBtn"
+                        class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent border-t border-b border-r border-s border-gray-900 rounded-r-md hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+                        <svg class="w-3 h-3 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M14.707 7.793a1 1 0 0 0-1.414 0L11 10.086V1.5a1 1 0 0 0-2 0v8.586L6.707 7.793a1 1 0 1 0-1.414 1.414l4 4a1 1 0 0 0 1.416 0l4-4a1 1 0 0 0-.002-1.414Z" />
+                            <path
+                                d="M18 12h-2.55l-2.975 2.975a3.5 3.5 0 0 1-4.95 0L4.55 12H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2Zm-3 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" />
+                        </svg>
+                        Download
+                    </button>
+                </div>
+            </div>
+            <br class="clear" />
+            <div class="top">
+                <h2> # Previews</h2>
+                <div id="preview-source" class="right">
+                    <img src="" id="image-source" alt="" />
+                </div>
+
+
+                <div id="preview-result" class="left">
+                    <img src="" id="image-result" alt="" />
+                </div>
+
+                <canvas id="canvas" style="display: none;"></canvas>
+            </div>
+        </div>
+        <script src="js/Previews.js"></script>
+        <script src="js/Input.js"></script>
+        <script src="js/Converter.js"></script>
+        <script src="js/app.js"></script>
+        <script>
+            let download = document.getElementById('downloadBtn')
+            download.addEventListener('click', downloadImage)
+
+            function downloadImage() {
+                let canvas = document.getElementById("canvas");
+
+                var dataURL = canvas.toDataURL("image/png");
+
+                var a = document.createElement('a');
+                a.href = dataURL
+                a.download = 'output.png';
+                a.click();
+            }
+        </script>
+        </div>
+    </section>
+
+    <!-- include and initialise termynal.js -->
+    <script src="termynal.js" data-termynal-container="#termynal"></script>
+</body>
+
+</html>
