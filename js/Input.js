@@ -1,8 +1,4 @@
-/**
- * Class for uploading source file.
- * 
- * @author Haru Atari <HaruAtari@gmail.com>
- */
+
 var Input = function()
 {
     var _this = this;
