@@ -1,8 +1,4 @@
-/**
- * Converter from source image to result symbols grid.
- * 
- * @author Haru Atari <HaruAtari@gmail.com>
- */
+
 var Converter = function () {
     var _this = this;
 
